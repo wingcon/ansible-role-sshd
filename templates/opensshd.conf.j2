@@ -49,7 +49,7 @@ SyslogFacility AUTH
 LogLevel VERBOSE
 
 # force strict key exchange against terrapin
-{{ "UseStrictKeyExchange "+sshd_strict_exchange if sshd_strict_exchange else "UseStrictKeyExchange"|comment }}
+{{ "UseStrictKeyExchange "+sshd_strict_exchange if sshd_strict_exchange is defined else "UseStrictKeyExchange"|comment }}
 
 # Cryptography
 # ------------

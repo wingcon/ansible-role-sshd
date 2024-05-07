@@ -54,7 +54,7 @@ CheckHostIP yes
 StrictHostKeyChecking ask
 
 # force strict key exchange against terrapin
-{{ "UseStrictKeyExchange "+ssh_strict_exchange if ssh_strict_exchange else "UseStrictKeyExchange"|comment }}
+{{ "UseStrictKeyExchange "+ssh_strict_exchange if ssh_strict_exchange is defined else "UseStrictKeyExchange"|comment }}
 
 # **Ciphers** -- If your clients don't support CTR (eg older versions), cbc will be added
 # CBC: is true if you want to connect with OpenSSL-base libraries

@@ -234,6 +234,9 @@ ssh_server_revoked_keys: []
 # the Ansible role dependency mechanism.
 ssh_hardening_enabled: true
 
+#ssh_strict_exchange: 1
+#sshd_strict_exchange: 1
+
 # Custom options for SSH client configuration file
 ssh_custom_options: []
 

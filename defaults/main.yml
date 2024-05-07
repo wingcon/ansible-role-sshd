@@ -170,6 +170,11 @@ ssh_ciphers: []
 ssh_kex: []
 ssh_key_algos: []
 
+sshd_macs: "{{ ssh_macs }}"
+sshd_ciphers: "{{ ssh_ciphers }}"
+sshd_kex: "{{ ssh_kex }}"
+sshd_key_algos: "{{ ssh_key_algos }}"
+
 ssh_macs_53_default:
   - hmac-ripemd160
   - hmac-sha1

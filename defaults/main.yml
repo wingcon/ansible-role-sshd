@@ -168,6 +168,7 @@ ssh_ps59: 'sandbox'
 ssh_macs: []
 ssh_ciphers: []
 ssh_kex: []
+ssh_key_algos: []
 
 ssh_macs_53_default:
   - hmac-ripemd160

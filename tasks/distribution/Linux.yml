@@ -12,7 +12,7 @@
 - name: 'Linux : include tasks to create crypo-vars'
   include_tasks: subtasks/crypto.yml
 
-- name: 'LInux : create revoked_keys and set permissions to root/600'
+- name: 'Linux : create revoked_keys and set permissions to root/600'
   become: true
   template:
     src: 'revoked_keys.j2'
@@ -23,6 +23,16 @@
   notify: restart linux sshd
   when: ssh_server_hardening | bool
 
+- name: 'Linux : ensure sshd privilege separation directory exists'
+  become: true
+  file:
+    path: '/run/sshd'
+    state: directory
+    mode: '0755'
+    owner: root
+    group: root
+  when: ssh_server_hardening | bool
+  
 - name: 'Linux : create sshd_config and set permissions to root/600'
   become: true
   template:
